@@ -80,7 +80,7 @@ class BtnLentaPolosa extends Component {
               </label>
             </>
           )}
-          {amount !== '' && (
+          {this.state.amount !== '' && (
             <label>
               ВАГА
               <input

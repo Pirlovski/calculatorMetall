@@ -114,7 +114,7 @@ class BtnKvadrat extends Component {
               ){' '}
             </>
           )}
-          {amount !== '' && (
+          {this.state.amount !== '' && (
             <label>
               ВАГА
               <input

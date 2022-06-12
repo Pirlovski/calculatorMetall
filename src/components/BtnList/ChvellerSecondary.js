@@ -114,7 +114,7 @@ class BtnChveller extends Component {
               ){' '}
             </>
           )}
-          {amount !== '' && (
+          {this.state.amount !== '' && (
             <label>
               ВАГА
               <input
