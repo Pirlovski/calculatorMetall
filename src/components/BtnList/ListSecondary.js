@@ -60,7 +60,7 @@ class BtnList extends Component {
     // console.log('ЗНАЧЕННЯ З ІМПУТА', this.state.amount);
     // console.log('ПОВНИЙ МАСИВ ОБЖ', this.probTwo);
     ///////////////////////////////////////// jab jab jab ////////////
-    const { amount, length, thickness, width } = this.state;
+    const { amount } = this.state;
     return (
       <>
         <form>
