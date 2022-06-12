@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/calculator_metalla/static/css/main.7acaea2f.css",
+    "main.js": "/calculator_metalla/static/js/main.1a34425b.js",
+    "index.html": "/calculator_metalla/index.html",
+    "main.7acaea2f.css.map": "/calculator_metalla/static/css/main.7acaea2f.css.map",
+    "main.1a34425b.js.map": "/calculator_metalla/static/js/main.1a34425b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.1a34425b.js"
+  ]
+}
