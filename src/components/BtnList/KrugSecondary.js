@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import Stal from 'components/List/Stal';
-class BtnList extends Component {
+class BtnKrug extends Component {
   state = {
     thickness: '',
     width: '',
@@ -27,15 +26,6 @@ class BtnList extends Component {
   resultDensity = this.probTwo.map(el => el.density);
   resultValue = this.probTwo.map(el => el.value);
 
-  // resultFn = e => {
-  //   const [thickness, length, width, amount] = this.state;
-  //   const array = [thickness, length, width, amount];
-  //   const total = array.reduce((acc, rec) => acc * rec);
-  //   this.setState({ weight: total });
-  //   console.log(total);
-  //   return total;
-  // };
-
   render() {
     const array = [
       this.state.thickness,
@@ -49,9 +39,6 @@ class BtnList extends Component {
     console.log(parse);
     console.log(total);
     console.log(zTotal);
-    // console.dir(this.resultDensity);
-    // console.log('ВИБРАНИЙ ЕЛЕМЕНТ В ІНПУТІ', this.props.onMarka);
-    // console.log('МАСИВ НАЗВ МЕТАЛА', this.resultValue);
 
     console.log(zTotal);
     // console.log(typeof this.props.density);
@@ -66,14 +53,13 @@ class BtnList extends Component {
       <>
         <form>
           <button type="button" onClick={this.hendleClick}>
-            Лист
+            Круг
           </button>
 
           {this.state.activ === true && (
             <>
-              (
               <label>
-                Товщина листа
+                Діаметр
                 <input
                   name="thickness"
                   type="number"
@@ -84,17 +70,7 @@ class BtnList extends Component {
                 ></input>
               </label>
               <label>
-                Ширина листа
-                <input
-                  name="width"
-                  type="number"
-                  value={this.state.name}
-                  onChange={this.hendleChange}
-                  placeholder="метри"
-                ></input>
-              </label>
-              <label>
-                Довжина листа
+                Довжина
                 <input
                   name="length"
                   type="number"
@@ -102,18 +78,7 @@ class BtnList extends Component {
                   onChange={this.hendleChange}
                   placeholder="метри"
                 ></input>
-              </label>
-              <label>
-                Кількість
-                <input
-                  name="amount"
-                  type="number"
-                  value={this.state.name}
-                  onChange={this.hendleChange}
-                  placeholder="шт"
-                ></input>
-              </label>
-              ){' '}
+              </label>{' '}
             </>
           )}
           {amount !== '' && (
@@ -136,4 +101,4 @@ class BtnList extends Component {
   }
 }
 
-export default BtnList;
+export default BtnKrug;

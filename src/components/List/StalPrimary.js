@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 import shortid from 'shortid';
-import List from '../BtnList/List';
-import Corner from '../BtnList/Сorner';
+import BtnList from '../BtnList/ListSecondary';
+import BtnCorner from '../BtnList/СornerSecondary';
+import BtnTruba from '../BtnList/TrubaSecondary';
+import BtnKrug from '../BtnList/KrugSecondary';
+import BtnProfilna from 'components/BtnList/ProfTrubaSecondary';
+import BtnKvadrat from 'components/BtnList/KvadratSecondary';
+import BtnChveller from 'components/BtnList/ChvellerSecondary';
+import BtnLentaPolosa from 'components/BtnList/LentaPolosa';
+import BtnBalka from 'components/BtnList/BalkaSecondary';
+import BtnChestigrannik from 'components/BtnList/ChestigrannikSecondary';
 
 class Stal extends Component {
   state = {
@@ -30,33 +38,15 @@ class Stal extends Component {
       { value: '20Х23Н18', density: 7.8 },
     ],
   };
-  peremennaState = this.state.options;
   hendleChangeSelect = e => {
     const { value, name } = e.target;
     this.setState({ [name]: value });
   };
-  // den = this.state.options.find(option => option.density);
 
-  // den = this.state.options.filter(option => option.value === this.state.marka);
   mapDensity = this.state.options;
-  probnaFunction = options => {
-    // const rV = this.resultValue;
-    const tpOnMarka = this.state.marka;
-    const search = this.probTwo.bind(tpOnMarka);
 
-    console.log(search);
-    if (this.state.options === search) {
-      this.setState({ density: options.density });
-      return options.density;
-    }
-  };
   numberDensity = Number(this.state.density);
   render() {
-    console.log(this.state.marka);
-    console.log(typeof this.state.density);
-    console.log(typeof this.numberDensity);
-    console.log(this.state.options[0].density);
-    // console.log(this.den);
     return (
       <>
         {' '}
@@ -73,17 +63,55 @@ class Stal extends Component {
             </option>
           ))}
         </select>
-        <List
+        <BtnList
           onChange={this.hendleChangeSelect}
-          // onMarka={this.state.marka}
           onOpt={this.mapDensity}
           onDestiny={this.state.marka}
         />
-        <Corner
+        <BtnCorner
           onChange={this.hendleChangeSelect}
-          // onMarka={this.state.marka}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
+        />
+        <BtnTruba
+          onChange={this.hendleChangeSelect}
+          onOpt={this.mapDensity}
+          onDestiny={this.state.marka}
+        />
+        <BtnKrug
+          onChange={this.hendleChangeSelect}
+          onOpt={this.mapDensity}
+          onDestiny={this.state.marka}
+        />
+        <BtnProfilna
+          onChange={this.hendleChangeSelect}
+          onOpt={this.mapDensity}
+          onDestiny={this.state.marka}
+        />
+        <BtnKvadrat
+          onChange={this.hendleChangeSelect}
+          onOpt={this.mapDensity}
+          onDestiny={this.state.marka}
+        />
+        <BtnChveller
+          onChange={this.hendleChangeSelect}
+          onOpt={this.mapDensity}
+          onDestiny={this.state.marka}
+        />
+        <BtnLentaPolosa
+          onChange={this.hendleChangeSelect}
+          onOpt={this.mapDensity}
+          onDestiny={this.state.marka}
+        />
+        <BtnBalka
+          onChange={this.hendleChangeSelect}
+          onOpt={this.mapDensity}
+          onDestiny={this.state.marka}
+        />
+        <BtnChestigrannik
+          onChange={this.hendleChangeSelect}
+          onOpt={this.mapDensity}
+          onDestiny={this.state.marka}
         />
       </>
     );

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import BtnList from 'components/BtnList/List';
-import BtnCorner from 'components/BtnList/Сorner';
+import BtnList from 'components/BtnList/ListSecondary';
+import BtnCorner from 'components/BtnList/СornerSecondary';
 
 class Wrapper extends Component {
   render() {
