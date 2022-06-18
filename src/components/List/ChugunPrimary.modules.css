@@ -1,0 +1,10 @@
+.List{
+  width: 100%;
+  list-style: none;
+  justify-content: space-around;
+  /* text-decoration: none; */
+  /* height: 500px; */
+  display: flex;
+  background-color: orange;
+  /* background-image: url("https://via.placeholder.com/500https://klike.net/uploads/posts/2020-04/1587719791_1.jpg"), */
+}

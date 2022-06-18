@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../BtnList/BalkaSecondary.modules.css';
 class BtnBalka extends Component {
   state = {
     thickness: '',
@@ -26,15 +27,6 @@ class BtnBalka extends Component {
   resultDensity = this.probTwo.map(el => el.density);
   resultValue = this.probTwo.map(el => el.value);
 
-  // resultFn = e => {
-  //   const [thickness, length, width, amount] = this.state;
-  //   const array = [thickness, length, width, amount];
-  //   const total = array.reduce((acc, rec) => acc * rec);
-  //   this.setState({ weight: total });
-  //   console.log(total);
-  //   return total;
-  // };
-
   render() {
     const array = [
       this.state.thickness,
@@ -45,100 +37,88 @@ class BtnBalka extends Component {
     const total = array.reduce((acc, rec) => acc * rec);
     const zTotal = total * this.props.onDestiny;
     const parse = zTotal.toFixed(2);
-    console.log(parse);
-    console.log(total);
-    console.log(zTotal);
-    // console.dir(this.resultDensity);
-    // console.log('ВИБРАНИЙ ЕЛЕМЕНТ В ІНПУТІ', this.props.onMarka);
-    // console.log('МАСИВ НАЗВ МЕТАЛА', this.resultValue);
 
-    console.log(zTotal);
-    // console.log(typeof this.props.density);
-    // console.log('REZULT DENSITY', this.resultDensity);
-    // console.log('REZULT Value', this.resultValue);
-    ///////////////////////////////////////// jab jab jab ////////////
-    // console.log('ЗНАЧЕННЯ З ІМПУТА', this.state.amount);
-    // console.log('ПОВНИЙ МАСИВ ОБЖ', this.probTwo);
-    ///////////////////////////////////////// jab jab jab ////////////
     return (
       <>
-        <form>
+        <div className="BalkaMarc">
           <button type="button" onClick={this.hendleClick}>
-            Лист
+            Балка
           </button>
-
-          {this.state.activ === true && (
-            <>
-              (
+          <div>
+            {' '}
+            {this.state.activ === true && (
+              <>
+                (
+                <label>
+                  Висота Балки
+                  <input
+                    name="thickness"
+                    type="number"
+                    placeholder="міліметри"
+                    value={this.state.name}
+                    onClick={this.hendleChange}
+                    onChange={this.hendleChange}
+                  ></input>
+                </label>
+                <label>
+                  Ширина Балки
+                  <input
+                    name="width"
+                    type="number"
+                    value={this.state.name}
+                    onChange={this.hendleChange}
+                    placeholder="метри"
+                  ></input>
+                </label>
+                <label>
+                  Товщина перемички{' '}
+                  <input
+                    name="length"
+                    type="number"
+                    value={this.state.name}
+                    onChange={this.hendleChange}
+                    placeholder="метри"
+                  ></input>
+                </label>
+                <label>
+                  Товщина полки
+                  <input
+                    name="amount"
+                    type="number"
+                    value={this.state.name}
+                    onChange={this.hendleChange}
+                    placeholder="шт"
+                  ></input>
+                </label>
+                <label>
+                  Довжина{' '}
+                  <input
+                    name="amount"
+                    type="number"
+                    value={this.state.name}
+                    onChange={this.hendleChange}
+                    placeholder="шт"
+                  ></input>
+                </label>
+                ){' '}
+              </>
+            )}
+            {this.state.amount !== '' && (
               <label>
-                Висота Балки
+                ВАГА
                 <input
-                  name="thickness"
-                  type="number"
-                  placeholder="міліметри"
-                  value={this.state.name}
-                  onClick={this.hendleChange}
+                  value={parse}
                   onChange={this.hendleChange}
-                ></input>
+                  name="weight"
+                  type="text"
+                  placeholder="кг"
+                >
+                  {this.total}
+                </input>
               </label>
-              <label>
-                Ширина Балки
-                <input
-                  name="width"
-                  type="number"
-                  value={this.state.name}
-                  onChange={this.hendleChange}
-                  placeholder="метри"
-                ></input>
-              </label>
-              <label>
-                Товщина перемички{' '}
-                <input
-                  name="length"
-                  type="number"
-                  value={this.state.name}
-                  onChange={this.hendleChange}
-                  placeholder="метри"
-                ></input>
-              </label>
-              <label>
-                Товщина полки
-                <input
-                  name="amount"
-                  type="number"
-                  value={this.state.name}
-                  onChange={this.hendleChange}
-                  placeholder="шт"
-                ></input>
-              </label>
-              <label>
-                Довжина{' '}
-                <input
-                  name="amount"
-                  type="number"
-                  value={this.state.name}
-                  onChange={this.hendleChange}
-                  placeholder="шт"
-                ></input>
-              </label>
-              ){' '}
-            </>
-          )}
-          {this.state.amount !== '' && (
-            <label>
-              ВАГА
-              <input
-                value={parse}
-                onChange={this.hendleChange}
-                name="weight"
-                type="text"
-                placeholder="кг"
-              >
-                {this.total}
-              </input>
-            </label>
-          )}
-        </form>
+            )}
+          </div>
+        </div>
       </>
     );
   }

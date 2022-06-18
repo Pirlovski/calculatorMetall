@@ -7,16 +7,16 @@ import BtnKrug from '../BtnList/KrugSecondary';
 import BtnProfilna from 'components/BtnList/ProfTrubaSecondary';
 import BtnKvadrat from 'components/BtnList/KvadratSecondary';
 import BtnChveller from 'components/BtnList/ChvellerSecondary';
-import BtnLentaPolosa from 'components/BtnList/LentaPolosa';
+import BtnLentaPolosa from 'components/BtnList/LentaPolosaSecondary';
 import BtnBalka from 'components/BtnList/BalkaSecondary';
 import BtnChestigrannik from 'components/BtnList/ChestigrannikSecondary';
-
+import '../List/ChugunPrimary.modules.css';
 class Chugun extends Component {
   state = {
     marka: '',
     density: '',
     options: [
-      { value: 'CЧ10', density: 11 },
+      { value: 'CЧ10', density: 7.85 },
       { value: 'CЧ15', density: 12 },
       { value: 'БСЧ20', density: 13 },
       { value: 'СЧ25', density: 14 },
@@ -48,56 +48,58 @@ class Chugun extends Component {
           ))}
         </select>
         ;
-        <BtnList
-          onChange={this.hendleChangeSelect}
-          onOpt={this.mapDensity}
-          onDestiny={this.state.marka}
-        />
-        <BtnCorner
-          onChange={this.hendleChangeSelect}
-          onOpt={this.mapDensity}
-          onDestiny={this.state.density}
-        />
-        <BtnTruba
-          onChange={this.hendleChangeSelect}
-          onOpt={this.mapDensity}
-          onDestiny={this.state.density}
-        />
-        <BtnKrug
-          onChange={this.hendleChangeSelect}
-          onOpt={this.mapDensity}
-          onDestiny={this.state.density}
-        />
-        <BtnProfilna
-          onChange={this.hendleChangeSelect}
-          onOpt={this.mapDensity}
-          onDestiny={this.state.density}
-        />
-        <BtnKvadrat
-          onChange={this.hendleChangeSelect}
-          onOpt={this.mapDensity}
-          onDestiny={this.state.density}
-        />
-        <BtnChveller
-          onChange={this.hendleChangeSelect}
-          onOpt={this.mapDensity}
-          onDestiny={this.state.density}
-        />
-        <BtnLentaPolosa
-          onChange={this.hendleChangeSelect}
-          onOpt={this.mapDensity}
-          onDestiny={this.state.density}
-        />
-        <BtnBalka
-          onChange={this.hendleChangeSelect}
-          onOpt={this.mapDensity}
-          onDestiny={this.state.density}
-        />
-        <BtnChestigrannik
-          onChange={this.hendleChangeSelect}
-          onOpt={this.mapDensity}
-          onDestiny={this.state.density}
-        />
+        <div className="List">
+          <BtnList
+            onChange={this.hendleChangeSelect}
+            onOpt={this.mapDensity}
+            onDestiny={this.state.marka}
+          />
+          <BtnCorner
+            onChange={this.hendleChangeSelect}
+            onOpt={this.mapDensity}
+            onDestiny={this.state.marka}
+          />
+          <BtnTruba
+            onChange={this.hendleChangeSelect}
+            onOpt={this.mapDensity}
+            onDestiny={this.state.marka}
+          />
+          <BtnKrug
+            onChange={this.hendleChangeSelect}
+            onOpt={this.mapDensity}
+            onDestiny={this.state.marka}
+          />
+          <BtnProfilna
+            onChange={this.hendleChangeSelect}
+            onOpt={this.mapDensity}
+            onDestiny={this.state.marka}
+          />
+          <BtnKvadrat
+            onChange={this.hendleChangeSelect}
+            onOpt={this.mapDensity}
+            onDestiny={this.state.marka}
+          />
+          <BtnChveller
+            onChange={this.hendleChangeSelect}
+            onOpt={this.mapDensity}
+            onDestiny={this.state.marka}
+          />
+          <BtnLentaPolosa
+            onChange={this.hendleChangeSelect}
+            onOpt={this.mapDensity}
+            onDestiny={this.state.marka}
+          />
+          <BtnBalka
+            onChange={this.hendleChangeSelect}
+            onOpt={this.mapDensity}
+            onDestiny={this.state.marka}
+          />
+          <BtnChestigrannik
+            onChange={this.hendleChangeSelect}
+            onOpt={this.mapDensity}
+            onDestiny={this.state.marka}
+          />
+        </div>
       </>
     );
   }

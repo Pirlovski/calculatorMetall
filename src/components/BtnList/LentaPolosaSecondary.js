@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import '../BtnList/LentaPolosaSecondary.modules.css';
+
 class BtnLentaPolosa extends Component {
   state = {
     thickness: '',
@@ -27,32 +29,16 @@ class BtnLentaPolosa extends Component {
   resultValue = this.probTwo.map(el => el.value);
 
   render() {
-    const array = [
-      this.state.thickness,
-      this.state.length,
-      this.state.width,
-      this.state.amount,
-    ];
-    const total = array.reduce((acc, rec) => acc * rec);
-    const zTotal = total * this.props.onDestiny;
-    const parse = zTotal.toFixed(2);
-    console.log(parse);
-    console.log(total);
-    console.log(zTotal);
-
-    console.log(zTotal);
-    // console.log(typeof this.props.density);
-    // console.log('REZULT DENSITY', this.resultDensity);
-    // console.log('REZULT Value', this.resultValue);
-    ///////////////////////////////////////// jab jab jab ////////////
-    // console.log('ЗНАЧЕННЯ З ІМПУТА', this.state.amount);
-    // console.log('ПОВНИЙ МАСИВ ОБЖ', this.probTwo);
-    ///////////////////////////////////////// jab jab jab ////////////
+    const onDestinyN = Number(this.props.onDestiny) * 1000;
+    const thicknessN = Number(this.state.thickness) / 1000;
+    const widthN = Number(this.state.width) / 1000;
+    const ves = onDestinyN * thicknessN * widthN;
+    const parse = ves.toFixed(2);
     return (
       <>
-        <form>
+        <div className="LentaPolosaMarc">
           <button type="button" onClick={this.hendleClick}>
-            Труба
+            Стрічка \ Полоса
           </button>
 
           {this.state.activ === true && (
@@ -78,9 +64,19 @@ class BtnLentaPolosa extends Component {
                   placeholder="міліметри"
                 ></input>
               </label>
+              <label>
+                Довжина
+                <input
+                  name="length"
+                  type="number"
+                  value={this.state.name}
+                  onChange={this.hendleChange}
+                  placeholder="метри"
+                ></input>
+              </label>
             </>
           )}
-          {this.state.amount !== '' && (
+          {this.state.length !== '' && (
             <label>
               ВАГА
               <input
@@ -90,11 +86,11 @@ class BtnLentaPolosa extends Component {
                 type="text"
                 placeholder="кг"
               >
-                {this.total}
+                {this.ves}
               </input>
             </label>
           )}
-        </form>
+        </div>
       </>
     );
   }

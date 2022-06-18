@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import '../BtnList/ChestigrannikSecondary.modules.css';
 class BtnChestigrannik extends Component {
   state = {
     thickness: '',
     width: '',
     length: '',
-    amount: '',
+    diametr: '',
     activ: null,
     status: null,
     density: '',
@@ -27,32 +28,17 @@ class BtnChestigrannik extends Component {
   resultValue = this.probTwo.map(el => el.value);
 
   render() {
-    const array = [
-      this.state.thickness,
-      this.state.length,
-      this.state.width,
-      this.state.amount,
-    ];
-    const total = array.reduce((acc, rec) => acc * rec);
-    const zTotal = total * this.props.onDestiny;
-    const parse = zTotal.toFixed(2);
-    console.log(parse);
-    console.log(total);
-    console.log(zTotal);
-
-    console.log(zTotal);
-    // console.log(typeof this.props.density);
-    // console.log('REZULT DENSITY', this.resultDensity);
-    // console.log('REZULT Value', this.resultValue);
-    ///////////////////////////////////////// jab jab jab ////////////
-    // console.log('ЗНАЧЕННЯ З ІМПУТА', this.state.amount);
-    // console.log('ПОВНИЙ МАСИВ ОБЖ', this.probTwo);
-    ///////////////////////////////////////// jab jab jab ////////////
+    const onDestinyN = Number(this.props.onDestiny);
+    const diametrN = Number(this.state.diametr);
+    const lengthN = Number(this.state.length);
+    const dac = 0.8663;
+    const ves = (onDestinyN * (dac * (diametrN * diametrN)) * lengthN) / 1000;
+    const parse = ves.toFixed(2);
     return (
       <>
-        <form>
+        <div className="ChestigrannikMarc">
           <button type="button" onClick={this.hendleClick}>
-            Труба
+            Шестигранник
           </button>
 
           {this.state.activ === true && (
@@ -60,7 +46,7 @@ class BtnChestigrannik extends Component {
               <label>
                 Діаметр
                 <input
-                  name="thickness"
+                  name="diametr"
                   type="number"
                   placeholder="міліметри"
                   value={this.state.name}
@@ -80,7 +66,7 @@ class BtnChestigrannik extends Component {
               </label>{' '}
             </>
           )}
-          {this.state.amount !== '' && (
+          {this.state.length !== '' && (
             <label>
               ВАГА
               <input
@@ -90,11 +76,11 @@ class BtnChestigrannik extends Component {
                 type="text"
                 placeholder="кг"
               >
-                {this.total}
+                {this.ves}
               </input>
             </label>
           )}
-        </form>
+        </div>
       </>
     );
   }

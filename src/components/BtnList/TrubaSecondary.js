@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import '../BtnList/TrubaSecondary.modules.css';
+
 class BtnTruba extends Component {
   state = {
     diametr: '',
@@ -33,7 +35,7 @@ class BtnTruba extends Component {
     const parse = ves.toFixed(2);
     return (
       <>
-        <form>
+        <div className="TrubaMarc">
           <button type="button" onClick={this.hendleClick}>
             Труба
           </button>
@@ -87,7 +89,7 @@ class BtnTruba extends Component {
               </input>
             </label>
           )}
-        </form>
+        </div>
       </>
     );
   }

@@ -7,7 +7,7 @@ import BtnKrug from '../BtnList/KrugSecondary';
 import BtnProfilna from 'components/BtnList/ProfTrubaSecondary';
 import BtnKvadrat from 'components/BtnList/KvadratSecondary';
 import BtnChveller from 'components/BtnList/ChvellerSecondary';
-import BtnLentaPolosa from 'components/BtnList/LentaPolosa';
+import BtnLentaPolosa from 'components/BtnList/LentaPolosaSecondary';
 import BtnBalka from 'components/BtnList/BalkaSecondary';
 import BtnChestigrannik from 'components/BtnList/ChestigrannikSecondary';
 
@@ -16,24 +16,24 @@ class Magniy extends Component {
     marka: '',
     density: '',
     options: [
-      { value: 'МА1', density: 11 },
-      { value: 'МА11', density: 11 },
-      { value: 'МА14', density: 11 },
-      { value: 'МА15', density: 11 },
-      { value: 'МА2', density: 11 },
-      { value: 'Ма2-1', density: 11 },
-      { value: 'МА5', density: 11 },
-      { value: 'МА8', density: 11 },
-      { value: 'Мг95', density: 11 },
-      { value: 'МЛ10', density: 11 },
-      { value: 'МЛ12', density: 11 },
-      { value: 'МЛ19', density: 11 },
-      { value: 'МЛ2', density: 11 },
-      { value: 'МЛ3', density: 11 },
-      { value: 'МЛ4', density: 11 },
-      { value: 'МЛ5', density: 11 },
-      { value: 'МЛ6', density: 11 },
-      { value: 'МЛ9', density: 11 },
+      { value: 'МА1', density: 7.85 },
+      { value: 'МА11', density: 113 },
+      { value: 'МА14', density: 114 },
+      { value: 'МА15', density: 115 },
+      { value: 'МА2', density: 116 },
+      { value: 'Ма2-1', density: 117 },
+      { value: 'МА5', density: 118 },
+      { value: 'МА8', density: 119 },
+      { value: 'Мг95', density: 1111 },
+      { value: 'МЛ10', density: 11112 },
+      { value: 'МЛ12', density: 1123 },
+      { value: 'МЛ19', density: 1124 },
+      { value: 'МЛ2', density: 1125 },
+      { value: 'МЛ3', density: 1126 },
+      { value: 'МЛ4', density: 1127 },
+      { value: 'МЛ5', density: 1128 },
+      { value: 'МЛ6', density: 1129 },
+      { value: 'МЛ9', density: 7.95 },
     ],
   };
   hendleChangeSelect = e => {
@@ -69,47 +69,47 @@ class Magniy extends Component {
         <BtnCorner
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
         />
         <BtnTruba
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
         />
         <BtnKrug
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
         />
         <BtnProfilna
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
         />
         <BtnKvadrat
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
         />
         <BtnChveller
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
         />
         <BtnLentaPolosa
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
         />
-        <BtnBalka
+        {/* <BtnBalka
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
-        />
+          onDestiny={this.state.marka}
+        /> */}
         <BtnChestigrannik
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
         />
       </>
     );

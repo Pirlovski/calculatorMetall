@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import '../BtnList/ProfTrubaSecondary.modules.css';
+
 class BtnProfilna extends Component {
   state = {
-    thickness: '',
+    height: '',
     width: '',
-    length: '',
+    thickness: '',
     amount: '',
     activ: null,
     status: null,
@@ -26,44 +28,25 @@ class BtnProfilna extends Component {
   resultDensity = this.probTwo.map(el => el.density);
   resultValue = this.probTwo.map(el => el.value);
 
-  // resultFn = e => {
-  //   const [thickness, length, width, amount] = this.state;
-  //   const array = [thickness, length, width, amount];
-  //   const total = array.reduce((acc, rec) => acc * rec);
-  //   this.setState({ weight: total });
-  //   console.log(total);
-  //   return total;
-  // };
-
   render() {
-    const array = [
-      this.state.thickness,
-      this.state.length,
-      this.state.width,
-      this.state.amount,
-    ];
-    const total = array.reduce((acc, rec) => acc * rec);
-    const zTotal = total * this.props.onDestiny;
-    const parse = zTotal.toFixed(2);
-    console.log(parse);
-    console.log(total);
-    console.log(zTotal);
-    // console.dir(this.resultDensity);
-    // console.log('ВИБРАНИЙ ЕЛЕМЕНТ В ІНПУТІ', this.props.onMarka);
-    // console.log('МАСИВ НАЗВ МЕТАЛА', this.resultValue);
-
-    console.log(zTotal);
-    // console.log(typeof this.props.density);
-    // console.log('REZULT DENSITY', this.resultDensity);
-    // console.log('REZULT Value', this.resultValue);
-    ///////////////////////////////////////// jab jab jab ////////////
-    // console.log('ЗНАЧЕННЯ З ІМПУТА', this.state.amount);
-    // console.log('ПОВНИЙ МАСИВ ОБЖ', this.probTwo);
-    ///////////////////////////////////////// jab jab jab ////////////
+    // const parse = zTotal.toFixed(2);
+    const onDestinyN = Number(this.props.onDestiny);
+    const heightN = Number(this.state.height);
+    const widthN = Number(this.state.width);
+    const thicknessN = Number(this.state.thickness);
+    const amountN = Number(this.state.amount);
+    const number = 0.0157;
+    const ves =
+      (onDestinyN / 7.85) *
+      number *
+      thicknessN *
+      (heightN + widthN - 2.86 * thicknessN) *
+      amountN;
+    const parse = ves.toFixed(2);
     const { amount } = this.state;
     return (
       <>
-        <form>
+        <div className="ProfTrubaMarc">
           <button type="button" onClick={this.hendleClick}>
             Труба профільна
           </button>
@@ -74,7 +57,7 @@ class BtnProfilna extends Component {
               <label>
                 Висота
                 <input
-                  name="thickness"
+                  name="height"
                   type="number"
                   placeholder="міліметри"
                   value={this.state.name}
@@ -95,7 +78,7 @@ class BtnProfilna extends Component {
               <label>
                 Товщина стінки
                 <input
-                  name="length"
+                  name="thickness"
                   type="number"
                   value={this.state.name}
                   onChange={this.hendleChange}
@@ -125,11 +108,11 @@ class BtnProfilna extends Component {
                 type="text"
                 placeholder="кг"
               >
-                {this.total}
+                {this.ves}
               </input>
             </label>
           )}
-        </form>
+        </div>
       </>
     );
   }

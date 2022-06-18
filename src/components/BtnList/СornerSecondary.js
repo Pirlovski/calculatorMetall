@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../BtnList/СornerSecondary.modules.css';
 
 class BtnCorner extends Component {
   state = {
@@ -38,74 +39,75 @@ class BtnCorner extends Component {
 
     return (
       <>
-        <form>
-          <button type="button" className="button" onClick={this.hendleClick}>
+        <div className="CornerMarc">
+          <button type="Button" onClick={this.hendleClick}>
             Уголок
           </button>
-
-          {this.state.activ === true && (
-            <>
-              <label>
-                Висота
-                <input
-                  name="height"
-                  placeholder="мм"
-                  type="number"
-                  value={this.state.name}
-                  onClick={this.hendleChange}
-                  onChange={this.hendleChange}
-                ></input>
-              </label>
-              <label>
-                Ширина
-                <input
-                  name="width"
-                  placeholder="мм"
-                  type="number"
-                  value={this.state.name}
-                  onClick={this.hendleChange}
-                  onChange={this.hendleChange}
-                ></input>
-              </label>
-              <label>
-                Товщина стінки
-                <input
-                  name="thickness"
-                  placeholder="мм"
-                  type="number"
-                  value={this.state.name}
-                  onClick={this.hendleChange}
-                  onChange={this.hendleChange}
-                ></input>
-              </label>
-              <label>
-                Довжина
-                <input
-                  name="length"
-                  placeholder="м"
-                  type="number"
-                  value={this.state.name}
-                  onClick={this.hendleChange}
-                  onChange={this.hendleChange}
-                ></input>
-              </label>
-              {this.state.length !== '' && (
+          <div>
+            {this.state.activ === true && (
+              <>
                 <label>
-                  ВАГА
+                  Висота
                   <input
-                    value={parse}
+                    name="height"
+                    placeholder="мм"
+                    type="number"
+                    value={this.state.name}
+                    onClick={this.hendleChange}
                     onChange={this.hendleChange}
-                    name="weight"
-                    type="text"
-                    placeholder="кг"
-                  >
-                    {this.ves}
-                  </input>
+                  ></input>
                 </label>
-              )}
-            </>
-          )}
-        </form>
+                <label>
+                  Ширина
+                  <input
+                    name="width"
+                    placeholder="мм"
+                    type="number"
+                    value={this.state.name}
+                    onClick={this.hendleChange}
+                    onChange={this.hendleChange}
+                  ></input>
+                </label>
+                <label>
+                  Товщина стінки
+                  <input
+                    name="thickness"
+                    placeholder="мм"
+                    type="number"
+                    value={this.state.name}
+                    onClick={this.hendleChange}
+                    onChange={this.hendleChange}
+                  ></input>
+                </label>
+                <label>
+                  Довжина
+                  <input
+                    name="length"
+                    placeholder="м"
+                    type="number"
+                    value={this.state.name}
+                    onClick={this.hendleChange}
+                    onChange={this.hendleChange}
+                  ></input>
+                </label>
+                {this.state.length !== '' && (
+                  <label>
+                    ВАГА
+                    <input
+                      value={parse}
+                      onChange={this.hendleChange}
+                      name="weight"
+                      type="text"
+                      placeholder="кг"
+                    >
+                      {this.ves}
+                    </input>
+                  </label>
+                )}
+              </>
+            )}
+          </div>
+        </div>
       </>
     );
   }

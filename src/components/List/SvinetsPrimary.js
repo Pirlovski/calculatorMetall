@@ -7,7 +7,7 @@ import BtnKrug from '../BtnList/KrugSecondary';
 import BtnProfilna from 'components/BtnList/ProfTrubaSecondary';
 import BtnKvadrat from 'components/BtnList/KvadratSecondary';
 import BtnChveller from 'components/BtnList/ChvellerSecondary';
-import BtnLentaPolosa from 'components/BtnList/LentaPolosa';
+import BtnLentaPolosa from 'components/BtnList/LentaPolosaSecondary';
 import BtnBalka from 'components/BtnList/BalkaSecondary';
 import BtnChestigrannik from 'components/BtnList/ChestigrannikSecondary';
 
@@ -16,8 +16,11 @@ class Svinets extends Component {
     marka: '',
     density: '',
     options: [
-      { value: 'O1', density: 11 },
-      { value: 'O1пч', density: 12 },
+      { value: 'СО', density: 7.85 },
+      { value: 'С1', density: 10 },
+      { value: 'С1С', density: 11 },
+      { value: 'С2', density: 12 },
+      { value: 'С3', density: 13 },
     ],
   };
   hendleChangeSelect = e => {
@@ -53,47 +56,47 @@ class Svinets extends Component {
         <BtnCorner
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
         />
         <BtnTruba
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
         />
         <BtnKrug
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
         />
         <BtnProfilna
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
         />
         <BtnKvadrat
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
         />
         <BtnChveller
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
         />
         <BtnLentaPolosa
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
         />
-        <BtnBalka
+        {/* <BtnBalka
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
-        />
+          onDestiny={this.state.marka}
+        /> */}
         <BtnChestigrannik
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
-          onDestiny={this.state.density}
+          onDestiny={this.state.marka}
         />
       </>
     );

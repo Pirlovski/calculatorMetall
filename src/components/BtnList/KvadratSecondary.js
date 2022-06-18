@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
+import '../BtnList/KvadratSecondary.modules.css';
+
 class BtnKvadrat extends Component {
   state = {
-    thickness: '',
-    width: '',
     length: '',
-    amount: '',
+
     activ: null,
     status: null,
     density: '',
@@ -26,43 +26,17 @@ class BtnKvadrat extends Component {
   resultDensity = this.probTwo.map(el => el.density);
   resultValue = this.probTwo.map(el => el.value);
 
-  // resultFn = e => {
-  //   const [thickness, length, width, amount] = this.state;
-  //   const array = [thickness, length, width, amount];
-  //   const total = array.reduce((acc, rec) => acc * rec);
-  //   this.setState({ weight: total });
-  //   console.log(total);
-  //   return total;
-  // };
-
   render() {
-    const array = [
-      this.state.thickness,
-      this.state.length,
-      this.state.width,
-      this.state.amount,
-    ];
-    const total = array.reduce((acc, rec) => acc * rec);
-    const zTotal = total * this.props.onDestiny;
-    const parse = zTotal.toFixed(2);
-    console.log(parse);
-    console.log(total);
-    console.log(zTotal);
-    // console.dir(this.resultDensity);
-    // console.log('ВИБРАНИЙ ЕЛЕМЕНТ В ІНПУТІ', this.props.onMarka);
-    // console.log('МАСИВ НАЗВ МЕТАЛА', this.resultValue);
+    const lengthN = Number(this.state.length);
+    const widthN = Number(this.state.width);
+    const onDensityN = Number(this.props.onDestiny);
 
-    console.log(zTotal);
-    // console.log(typeof this.props.density);
-    // console.log('REZULT DENSITY', this.resultDensity);
-    // console.log('REZULT Value', this.resultValue);
-    ///////////////////////////////////////// jab jab jab ////////////
-    // console.log('ЗНАЧЕННЯ З ІМПУТА', this.state.amount);
-    // console.log('ПОВНИЙ МАСИВ ОБЖ', this.probTwo);
-    ///////////////////////////////////////// jab jab jab ////////////
+    const ves = (widthN * widthN * onDensityN * lengthN) / 1000;
+    const parse = ves.toFixed(2);
+
     return (
       <>
-        <form>
+        <div className="KvadratMarc">
           <button type="button" onClick={this.hendleClick}>
             Квадрат
           </button>
@@ -71,28 +45,17 @@ class BtnKvadrat extends Component {
             <>
               (
               <label>
-                Висота
-                <input
-                  name="thickness"
-                  type="number"
-                  placeholder="міліметри"
-                  value={this.state.name}
-                  onClick={this.hendleChange}
-                  onChange={this.hendleChange}
-                ></input>
-              </label>
-              <label>
                 Ширина
                 <input
                   name="width"
                   type="number"
                   value={this.state.name}
                   onChange={this.hendleChange}
-                  placeholder="метри"
+                  placeholder="міліметри"
                 ></input>
               </label>
               <label>
-                Товщина стінки
+                Довжина
                 <input
                   name="length"
                   type="number"
@@ -101,20 +64,10 @@ class BtnKvadrat extends Component {
                   placeholder="метри"
                 ></input>
               </label>
-              <label>
-                Кількість
-                <input
-                  name="amount"
-                  type="number"
-                  value={this.state.name}
-                  onChange={this.hendleChange}
-                  placeholder="шт"
-                ></input>
-              </label>
               ){' '}
             </>
           )}
-          {this.state.amount !== '' && (
+          {this.state.length !== '' && (
             <label>
               ВАГА
               <input
@@ -124,11 +77,11 @@ class BtnKvadrat extends Component {
                 type="text"
                 placeholder="кг"
               >
-                {this.total}
+                {this.ves}
               </input>
             </label>
           )}
-        </form>
+        </div>
       </>
     );
   }

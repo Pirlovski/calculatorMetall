@@ -1,0 +1,59 @@
+
+body{
+    width: 100vw;
+}
+.app{
+    width: 100vw;
+    /* background-color:grey; */
+}
+.primaryButton{
+    display: inline-block;
+    width: 15em;
+    /* font-size: 25px; */
+    color: rgba(255,255,255,.9);
+    text-shadow: #2e7ebd 0 1px 2px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.1;
+    white-space: pre-line;
+    padding: .7em 0;
+    border: 1px solid;
+    border-color: #60a3d8 #2970a9 #2970a9 #60a3d8;
+    border-radius: 6px;
+    outline: none;
+    background: #60a3d8 linear-gradient(#89bbe2, #60a3d8 50%, #378bce);
+    box-shadow: inset rgba(255,255,255,.5) 1px 1px;
+    font-size: 40%;
+    font-weight: 700;
+    position: relative; left: 50%; transform: translate(-50%, 0%);
+    
+
+}
+.primaryButton:hover{
+    color: rgb(255,255,255);
+    background-image: linear-gradient(#9dc7e7, #74afdd 50%, #378bce);
+}
+.primaryButton:active {
+    color: rgb(255,255,255);
+    border-color: #2970a9;
+    background-image: linear-gradient(#5796c8, #6aa2ce);
+    box-shadow: none;
+  }
+  .ListMarka{
+    display: flex;
+    flex-wrap: nowrap;
+
+  }
+  .buttonList{
+    margin: 15px 0 15px 0;
+    font-size: 8px;
+    text-align: center;
+
+    
+  }
+  .List{
+    display: flex;
+    padding: 0;
+    justify-content: space-around;
+    width: 100%;
+}

@@ -7,7 +7,7 @@ import BtnKrug from '../BtnList/KrugSecondary';
 import BtnProfilna from 'components/BtnList/ProfTrubaSecondary';
 import BtnKvadrat from 'components/BtnList/KvadratSecondary';
 import BtnChveller from 'components/BtnList/ChvellerSecondary';
-import BtnLentaPolosa from 'components/BtnList/LentaPolosa';
+import BtnLentaPolosa from 'components/BtnList/LentaPolosaSecondary';
 import BtnBalka from 'components/BtnList/BalkaSecondary';
 import BtnChestigrannik from 'components/BtnList/ChestigrannikSecondary';
 
@@ -16,8 +16,9 @@ class Stal extends Component {
     marka: '',
     density: '',
     options: [
-      { value: '08Х13', density: 11 },
-      { value: '08Х17Т', density: 12 },
+      { value: 'СПИСОК' },
+      { value: '08Х13', density: 7.85 },
+      { value: '08Х17Т', density: 7.85 },
       { value: '08Х18Н10', density: 13 },
       { value: '08Х18Н10Т', density: 14 },
       { value: '09Г2С', density: 15 },
@@ -35,7 +36,7 @@ class Stal extends Component {
       { value: '15ХСНД', density: 127 },
       { value: '20 ', density: 7.85 },
       { value: '20Х13', density: 119 },
-      { value: '20Х23Н18', density: 7.8 },
+      { value: '20Х23Н18', density: 7.85 },
     ],
   };
   hendleChangeSelect = e => {
@@ -103,11 +104,11 @@ class Stal extends Component {
           onOpt={this.mapDensity}
           onDestiny={this.state.marka}
         />
-        <BtnBalka
+        {/* <BtnBalka
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}
           onDestiny={this.state.marka}
-        />
+        /> */}
         <BtnChestigrannik
           onChange={this.hendleChangeSelect}
           onOpt={this.mapDensity}

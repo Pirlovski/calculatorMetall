@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import '../BtnList/KrugSecondary.modules.css';
+
 class BtnKrug extends Component {
   state = {
-    thickness: '',
+    diametr: '',
     width: '',
     length: '',
     amount: '',
@@ -27,30 +29,15 @@ class BtnKrug extends Component {
   resultValue = this.probTwo.map(el => el.value);
 
   render() {
-    const array = [
-      this.state.thickness,
-      this.state.length,
-      this.state.width,
-      this.state.amount,
-    ];
-    const total = array.reduce((acc, rec) => acc * rec);
-    const zTotal = total * this.props.onDestiny;
-    const parse = zTotal.toFixed(2);
-    console.log(parse);
-    console.log(total);
-    console.log(zTotal);
-
-    console.log(zTotal);
-    // console.log(typeof this.props.density);
-    // console.log('REZULT DENSITY', this.resultDensity);
-    // console.log('REZULT Value', this.resultValue);
-    ///////////////////////////////////////// jab jab jab ////////////
-    // console.log('ЗНАЧЕННЯ З ІМПУТА', this.state.amount);
-    // console.log('ПОВНИЙ МАСИВ ОБЖ', this.probTwo);
-    ///////////////////////////////////////// jab jab jab ////////////
+    const diametrN = Number(this.state.diametr);
+    const lengthN = Number(this.state.length);
+    const onDestinyN = Number(this.props.onDestiny);
+    const pi = 3.14;
+    const ves = onDestinyN * pi * ((diametrN * diametrN) / 4000);
+    const parse = ves.toFixed(2);
     return (
       <>
-        <form>
+        <div className="KrugMarc">
           <button type="button" onClick={this.hendleClick}>
             Круг
           </button>
@@ -60,7 +47,7 @@ class BtnKrug extends Component {
               <label>
                 Діаметр
                 <input
-                  name="thickness"
+                  name="diametr"
                   type="number"
                   placeholder="міліметри"
                   value={this.state.name}
@@ -80,7 +67,7 @@ class BtnKrug extends Component {
               </label>{' '}
             </>
           )}
-          {this.state.amount !== '' && (
+          {this.state.length !== '' && (
             <label>
               ВАГА
               <input
@@ -90,11 +77,11 @@ class BtnKrug extends Component {
                 type="text"
                 placeholder="кг"
               >
-                {this.total}
+                {this.ves}
               </input>
             </label>
           )}
-        </form>
+        </div>
       </>
     );
   }
